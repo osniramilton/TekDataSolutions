@@ -41,6 +41,12 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 300px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
         .service img {
             width: 100%;
@@ -55,6 +61,16 @@
             width: 100%;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const services = document.querySelectorAll(".service");
+            services.forEach(service => {
+                service.addEventListener("click", function() {
+                    alert("Saiba mais sobre: " + this.querySelector("h3").innerText);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
